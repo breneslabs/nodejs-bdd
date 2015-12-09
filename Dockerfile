@@ -26,4 +26,3 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
     
 # Install Chimp
 RUN npm install chimp -g
-
