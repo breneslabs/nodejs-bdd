@@ -25,7 +25,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc
     
 # Install Chimp
-RUN npm install chimp -g
+RUN npm install chimp -g -q
 
 RUN npm install selenium-standalone -g
 RUN selenium-standalone install --version=2.48.2 --baseURL=https://selenium-release.storage.googleapis.com
@@ -34,3 +34,4 @@ RUN selenium-standalone install --version=2.48.2 --baseURL=https://selenium-rele
 RUN mkdir -p /usr/local/lib/node_modules/chimp/node_modules/selenium-standalone/.selenium/selenium-server/
 RUN cp /usr/local/lib/node_modules/selenium-standalone/.selenium/selenium-server/2.48.2-server.jar /usr/local/lib/node_modules/chimp/node_modules/selenium-standalone/.selenium/selenium-server/
 
+#
