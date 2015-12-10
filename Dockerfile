@@ -26,3 +26,9 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
     
 # Install Chimp
 RUN npm install chimp -g
+
+RUN npm install selenium-standalone -g
+
+# Fixed Selenium version missing. Required 2.48.2-server.jar but found 2.47.1-server,jar  
+RUN cd /usr/local/lib/node_modules/chimp/node_modules/selenium-standalone/.selenium/selenium-server && \
+    ln -s 2.47.1-server.jar 2.48.2-server.jar
