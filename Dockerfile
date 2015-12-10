@@ -34,9 +34,4 @@ RUN selenium-standalone install --version=2.48.2 --baseURL=https://selenium-rele
 RUN mkdir -p /usr/local/lib/node_modules/chimp/node_modules/selenium-standalone/.selenium/selenium-server/
 RUN cp /usr/local/lib/node_modules/selenium-standalone/.selenium/selenium-server/2.48.2-server.jar /usr/local/lib/node_modules/chimp/node_modules/selenium-standalone/.selenium/selenium-server/
 
-ADD app /
-
-RUN npm install app
-RUN npm start app
-
 #
